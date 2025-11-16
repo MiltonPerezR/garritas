@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garritas Nails Studio | Uñas, Manicure y Moda</title>
+
+  <!-- SEO BÁSICO -->
+  <meta name="description" content="Garritas Nails Studio en Nicaragua: Uñas acrílicas, manicure, pedicure, tienda de ropa y reservas online. Calidad y estilo.">
+  <meta name="keywords" content="uñas Nicaragua, manicure, pedicure, salón de belleza, tienda de ropa, Garritas Nails Studio">
+  <meta name="author" content="Garritas Nails Studio">
+  <meta name="robots" content="index, follow">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Garritas Nails Studio | Uñas y Moda">
+  <meta property="og:description" content="Salón de uñas y tienda de ropa para mujeres. Uñas acrílicas, manicure, pedicure y prendas de moda.">
+  <meta property="og:image" content="resorce/img/logo.jpg">
+  <meta property="og:url" content="https://tusitio.com">
+  <meta property="og:type" content="website">
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- SCHEMA ORG -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Garritas Nails Studio",
+    "image": "resorce/img/logo.jpg",
+    "telephone": "+50557259849",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Nicaragua"
+    },
+    "url": "https://tusitio.com",
+    "description": "Salón de uñas con servicios de manicure, pedicure, acrílicas y tienda de ropa moderna.",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61583931358910",
+      "https://www.tiktok.com/@garritas.nails5?_r=1&_t=ZM-91S4Ba81AoG",
+      "https://wa.me/50557259849"
+    ]
+  }
+  </script>
+
+  <!-- TAILWIND (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Swiper (carrusel) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!-- AOS (animaciones al hacer scroll) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- GSAP (animaciones avanzadas) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Poppins", sans-serif; }
+    .float-whatsapp { position: fixed; right: 24px; bottom: 24px; z-index: 60; }
+    .card-shadow { box-shadow: 0 10px 30px rgba(52,73,94,0.08); }
+    .fade-in { opacity: 0; transform: translateY(8px); animation: fadeIn .6s forwards; }
+    @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- NAVBAR -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center gap-3">
+          <img src="resorce/img/logo.jpg" alt="Garritas Logo" class="h-11 w-11 rounded-full object-cover" />
+          <div>
+            <a href="#" class="text-xl font-bold text-pink-600">Garritas Nails Studio</a>
+            <div class="text-xs text-gray-500">Uñas • Manicure • Ropa</div>
+          </div>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-6">
+          <a href="#servicios" class="text-sm font-medium hover:text-pink-600">Uñas & Estilo</a>
+          <a href="#galeria" class="text-sm font-medium hover:text-pink-600">Galería</a>
+          <a href="#tienda" class="text-sm font-medium hover:text-pink-600">Tienda</a>
+          <a href="#contacto" class="text-sm font-medium hover:text-pink-600">Contacto</a>
+          <button id="reservarBtn" class="ml-2 bg-pink-600 text-white px-4 py-2 rounded-full text-sm shadow">Reservar</button>
+        </nav>
+
+        <div class="md:hidden">
+          <button id="btnMenu" class="text-pink-600"><i class="fa-solid fa-bars fa-lg"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+      <div class="px-4 py-4 flex flex-col gap-3">
+        <a href="#servicios" class="text-gray-700">Uñas & Estilo</a>
+        <a href="#galeria" class="text-gray-700">Galería</a>
+        <a href="#tienda" class="text-gray-700">Tienda</a>
+        <a href="#contacto" class="text-gray-700">Contacto</a>
+        <button id="reservarBtnMobile" class="mt-2 bg-pink-600 text-white px-4 py-2 rounded-full">Reservar</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="relative h-[70vh] md:h-[60vh] flex items-center" style="background-color: rosybrown;">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
+    <div class="relative max-w-6xl mx-auto px-6 text-center text-white z-10" data-aos="fade-up">
+      <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow-lg">Uñas, estilo y moda</h1>
+      <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto">Transformamos tu look con uñas acrílicas, manicure profesional y una tienda con prendas seleccionadas para mujeres.</p>
+      <div class="mt-6 flex justify-center gap-3">
+        <a href="#tienda" class="bg-white/90 text-pink-600 px-4 py-2 rounded-full font-semibold shadow">Ver tienda</a>
+        <a href="#galeria" class="bg-transparent border border-white/60 text-white px-4 py-2 rounded-full">Ver galería</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-16">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 items-center">
+      <div class="md:col-span-2">
+        <h2 class="text-3xl font-bold text-pink-600 mb-4">Uñas & Estilo</h2>
+        <p class="text-gray-600 mb-6">Ofrecemos acrílicas, gelish, diseños 3D, manicure y pedicure. Productos de calidad, sanitización profesional y atención personalizada.</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-white p-4 rounded-lg card-shadow">
+            <h3 class="font-semibold">Acrílicas</h3>
+            <p class="text-sm text-gray-500">Durabilidad y diseños personalizados.</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg card-shadow">
+            <h3 class="font-semibold">Manicure & Pedicure</h3>
+            <p class="text-sm text-gray-500">Cuidado estético y salud de tus uñas.</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg card-shadow">
+            <h3 class="font-semibold">Diseños</h3>
+            <p class="text-sm text-gray-500">Arte y tendencias en cada uña.</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg card-shadow">
+            <h3 class="font-semibold">Tienda</h3>
+            <p class="text-sm text-gray-500">Prendas y accesorios seleccionados.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg overflow-hidden bg-gradient-to-tr from-pink-50 to-white p-4">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" alt="manicure" class="w-full h-64 object-cover rounded-lg" id="serviciosImg" />
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-pink-600 mb-6">Galería de trabajos</h2>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="resorce/img/uñas .jpg" class="w-full h-64 object-cover rounded-lg"/></div>
+          <div class="swiper-slide"><img src="resorce/img/uñas 2.jpg" class="w-full h-64 object-cover rounded-lg"/></div>
+          <div class="swiper-slide"><img src="resorce/img/uñas 3.jpg" class="w-full h-64 object-cover rounded-lg"/></div>
+          <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1600180758890-9cbe4d4a4e99" class="w-full h-64 object-cover rounded-lg"/></div>
+        </div>
+        <div class="swiper-pagination mt-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIENDA -->
+  <section id="tienda" class="py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-pink-600 mb-6">Tienda - Prendas destacadas</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg p-4 card-shadow">
+          <img src="https://imgs.search.brave.com/6KiBloIx_OddPM8OeRCvBjvNk5AJVGUAmPqra6NKBes/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTEz/MzQ3OTQwOC9lcy9m/b3RvL2pvdmVuLW11/amVyLWRlLW1vZGEt/bWVuc2FqZXMtZGUt/dGV4dG8tZW4tc3Ut/dGVsJUMzJUE5Zm9u/by1lbi1zYW50YS1t/JUMzJUIzbmljYS1s/YS5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9QUU5VDlJU2Yw/YnBkYlZBUktNMldZ/djJMTG9Kd3NhYTF6/UHc4emgzcWVlTT0" class="w-full h-52 object-cover rounded-md mb-3" alt="Blusa"/>
+          <h3 class="font-semibold">Blusa elegante</h3>
+          <p class="text-sm text-gray-500">Tallas S, M, L</p>
+          <div class="mt-4 flex justify-between items-center">
+            <div class="text-lg font-bold">C$ 0</div>
+            <!-- <button class="px-3 py-1 bg-pink-600 text-white rounded-md add-to-cart">Comprar</button> -->
+          </div>
+        </div>
+        <div class="bg-white rounded-lg p-4 card-shadow">
+          <img src="https://imgs.search.brave.com/6KiBloIx_OddPM8OeRCvBjvNk5AJVGUAmPqra6NKBes/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTEz/MzQ3OTQwOC9lcy9m/b3RvL2pvdmVuLW11/amVyLWRlLW1vZGEt/bWVuc2FqZXMtZGUt/dGV4dG8tZW4tc3Ut/dGVsJUMzJUE5Zm9u/by1lbi1zYW50YS1t/JUMzJUIzbmljYS1s/YS5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9QUU5VDlJU2Yw/YnBkYlZBUktNMldZ/djJMTG9Kd3NhYTF6/UHc4emgzcWVlTT0" class="w-full h-52 object-cover rounded-md mb-3" alt="Vestido"/>
+          <h3 class="font-semibold">Vestido casual</h3>
+          <p class="text-sm text-gray-500">Tallas S, M, L</p>
+          <div class="mt-4 flex justify-between items-center">
+            <div class="text-lg font-bold">C$ 0</div>
+            <!-- <button class="px-3 py-1 bg-pink-600 text-white rounded-md add-to-cart">Comprar</button> -->
+          </div>
+        </div>
+        <div class="bg-white rounded-lg p-4 card-shadow">
+          <img src="https://imgs.search.brave.com/6KiBloIx_OddPM8OeRCvBjvNk5AJVGUAmPqra6NKBes/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTEz/MzQ3OTQwOC9lcy9m/b3RvL2pvdmVuLW11/amVyLWRlLW1vZGEt/bWVuc2FqZXMtZGUt/dGV4dG8tZW4tc3Ut/dGVsJUMzJUE5Zm9u/by1lbi1zYW50YS1t/JUMzJUIzbmljYS1s/YS5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9QUU5VDlJU2Yw/YnBkYlZBUktNMldZ/djJMTG9Kd3NhYTF6/UHc4emgzcWVlTT0" class="w-full h-52 object-cover rounded-md mb-3" alt="Pantalon"/>
+          <h3 class="font-semibold">Pantalón moderno</h3>
+          <p class="text-sm text-gray-500">Tallas S, M, L</p>
+          <div class="mt-4 flex justify-between items-center">
+            <div class="text-lg font-bold">C$ 0</div>
+            <!-- <button class="px-3 py-1 bg-pink-600 text-white rounded-md add-to-cart">Comprar</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="py-12 bg-pink-50">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h3 class="text-2xl font-bold text-pink-600 mb-4">Testimonios</h3>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="bg-white p-4 rounded-lg card-shadow">
+          <p class="text-gray-600">"Me encantaron mis uñas, el diseño quedó perfecto y la atención fue excelente."</p>
+          <div class="mt-3 font-semibold">— Ana G.</div>
+        </div>
+        <div class="bg-white p-4 rounded-lg card-shadow">
+          <p class="text-gray-600">"Compré un vestido y llegó rápido. Calidad 10/10."</p>
+          <div class="mt-3 font-semibold">— María R.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contacto" class="bg-black text-white py-10">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6 items-center">
+      <div>
+        <img src="resorce/img/logo.jpg" alt="logo" class="h-12 w-12 rounded-full mb-2" />
+        <div class="text-pink-300 font-semibold">Garritas Nails Studio</div>
+        <div class="text-gray-400 text-sm">Uñas, Manicure & Tienda</div>
+      </div>
+
+      <div class="text-center">
+        <h4 class="font-semibold mb-3">Horario</h4>
+        <div class="text-sm text-gray-400">Lun - Vie: 9:00 - 18:00<br/> Sáb: 9:00 - 14:00</div>
+      </div>
+
+      <div class="text-right">
+        <div class="flex justify-end gap-3 mb-3">
+          <a href="https://www.facebook.com/profile.php?id=61583931358910" target="_blank" class="p-2 rounded-full bg-white/10 hover:bg-white/20"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.tiktok.com/@garritas.nails5?_r=1&_t=ZM-91S4Ba81AoG" target="_blank" class="p-2 rounded-full bg-white/10 hover:bg-white/20"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://wa.me/50557259849" target="_blank" class="p-2 rounded-full bg-white/10 hover:bg-white/20"><i class="fa-brands fa-whatsapp"></i></a>
+        <!-- <div class="text-gray-400 text-sm">Correo: garritasnails@gmail.com</div> -->
+        <div class="text-gray-500 text-xs mt-2">© 2025 Garritas Nails Studio</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a class="float-whatsapp" href="https://wa.me/50557259849" target="_blank" aria-label="WhatsApp">
+    <div class="bg-green-500 rounded-full h-14 w-14 flex items-center justify-center text-white shadow-lg">
+      <i class="fa-brands fa-whatsapp fa-lg"></i>
+    </div>
+  </a>
+
+  <!-- RESERVA MODAL -->
+  <div id="modalReservar" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-6 max-w-md w-full relative">
+      <img src="resorce/img/logo.jpg" class="h-16 w-16 rounded-full absolute -top-8 left-1/2 -translate-x-1/2 shadow-lg border-2 border-white" />
+      <h3 class="text-xl font-bold text-pink-600 mb-3 mt-10 text-center">Reservar cita</h3>
+      <form id="formReserva" class="space-y-4">
+        <input type="text" id="nombre" placeholder="Tu nombre" class="w-full border p-2 rounded" required>
+        <input type="tel" id="telefono" placeholder="Teléfono (ej. 50512345678)" class="w-full border p-2 rounded" required>
+        <input type="datetime-local" id="fecha" class="w-full border p-2 rounded" required>
+        <label class="font-semibold text-gray-700">Seleccioná uno o varios servicios:</label>
+        <div class="grid grid-cols-2 gap-2 text-sm">
+          <label class="flex items-center gap-2"><input type="checkbox" value="Acrílicas" class="servicioCheck">Acrílicas</label>
+          <label class="flex items-center gap-2"><input type="checkbox" value="Manicure" class="servicioCheck">Manicure</label>
+          <label class="flex items-center gap-2"><input type="checkbox" value="Pedicure" class="servicioCheck">Pedicure</label>
+          <label class="flex items-center gap-2"><input type="checkbox" value="Gelish" class="servicioCheck">Gelish</label>
+          <label class="flex items-center gap-2"><input type="checkbox" value="Diseños 3D" class="servicioCheck">Diseños 3D</label>
+          <label class="flex items-center gap-2"><input type="checkbox" value="Retoque" class="servicioCheck">Retoque</label>
+        </div>
+        <div class="flex justify-end gap-3 pt-2">
+          <button type="button" id="cancelReserva" class="px-4 py-2">Cancelar</button>
+          <button type="submit" class="px-4 py-2 bg-pink-600 text-white rounded">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Swiper galería
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      pagination: { el: ".swiper-pagination", clickable: true },
+      breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
+    });
+
+    // Menu móvil
+    const btnMenu = document.getElementById('btnMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
+    btnMenu && btnMenu.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Modal
+    const modal = document.getElementById('modalReservar');
+    const reservarBtn = document.getElementById('reservarBtn');
+    const reservarBtnMobile = document.getElementById('reservarBtnMobile');
+    const cancelReserva = document.getElementById('cancelReserva');
+
+    function openModal(){ modal.classList.remove('hidden'); modal.classList.add('flex'); }
+    function closeModal(){ modal.classList.remove('flex'); modal.classList.add('hidden'); }
+
+    reservarBtn && reservarBtn.addEventListener('click', openModal);
+    reservarBtnMobile && reservarBtnMobile.addEventListener('click', openModal);
+    cancelReserva.addEventListener('click', closeModal);
+
+    // Enviar reserva
+    const form = document.getElementById('formReserva');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
+      const fecha = document.getElementById('fecha').value;
+      const serviciosSeleccionados = [...document.querySelectorAll('.servicioCheck:checked')].map(x => x.value);
+
+      if(!nombre || !telefono || !fecha){ alert("Completá todos los campos."); return; }
+      if(serviciosSeleccionados.length===0){ alert("Seleccioná al menos un servicio."); return; }
+
+      const serviciosTexto = serviciosSeleccionados.join(", ");
+
+      const texto = 
+        `Hola Garritas!%0A%0ASolicito una reserva.%0ANombre: ${encodeURIComponent(nombre)}%0ATeléfono: ${encodeURIComponent(telefono)}%0AFecha: ${encodeURIComponent(fecha)}%0AServicios: ${encodeURIComponent(serviciosTexto)}`;
+
+      const wa = `https://wa.me/50557259849?text=${texto}`;
+      window.open(wa, "_blank");
+      closeModal();
+    });
+  </script>
+</body>
+</html>
